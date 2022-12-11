@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Calculadora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="stylesheet" src="style.css"/>
+     </head>
+  <h1>Calculadora</h1>
+  <hr />
+      <body>
+       
+<div class="calculadora">
+        <input type="number" id="op1" />
+        <button type="button" onclick="operacion='suma'">+</button>
+        <button type="button" onclick="operacion='resta'">-</button>
+        <button type="button" onclick="operacion='mult'">x</button>
+        <button type="button" onclick="operacion='div'">/</button>
+        <input type="number" id="op2" />
+        <button type="button" onclick="operar()">=</button>
+        <input type="number" id="res" readonly />
+    
+      <script>
+        var cont = 0;
+        var complemento = "<br>";
+        var obj1 = {
+          valor1: 1,
+          valor2: 2,
+          subvalor1: {
+            valor1: 1,
+            valor2: {
+              valor3: "texto",
+            },
+          },
+        };
+
+        function cambiarTexto(nuevotexto) {
+          document.getElementById("demo").innerHTML =
+            nuevotexto + cont + complemento;
+          cont++;
+          console.log(obj1);
+          console.log(obj1.valor1);
+          console.log(obj1.valor2);
+          console.log(obj1.subvalor1);
+          console.log(obj1.subvalor1.valor1);
+          console.log(obj1.subvalor1.valor2.valor3);
+          console.log(document.getElementById("demo").attributes);
+
+          var lista = document.getElementById("compras");
+          var valor = document.getElementById("textoLista").value;
+          lista.innerHTML += "<li>" + valor + " " + cont + "</li>";
+        }
+      </script>
+
+      <script>
+        var operacion = "suma";
+
+        function operar() {
+          var valor1 = Number(document.getElementById("op1").value);
+          var valor2 = Number(document.getElementById("op2").value);
+          var result;
+
+          switch (operacion) {
+            case "suma":
+              result = valor1 + valor2;
+              break;
+            case "resta":
+              result = valor1 - valor2;
+              break;
+            case "mult":
+              result = valor1 * valor2;
+              break;
+            case "div":
+              if (valor2 == 0) {
+                alert("No se puede dividir entre 0");
+                return;
+              } else {
+                result = valor1 / valor2;
+              }
+              break;
+          }
+          document.getElementById("res").value = result;
+        }
+        //https://www.w3schools.com/js/js_intro.asp
+      </script>
+      </div>
+    </html>
+  </body>
+</html>
+
