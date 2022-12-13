@@ -5,21 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Calculadora</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <link rel="stylesheet" src="style.css"/>
-     </head>
-  <h1>Calculadora</h1>
-  <hr />
+        </head>
+     <style>
+      h1{ margin: auto;
+        text-align: center;
+        color: seashell;
+              }
+              hr{
+                border-color: black;
+                
+              }
+    </style>
+       <h1>Calculadora</h1> 
+        <hr>
+      
       <body>
+        <style> 
+        body{
+          background-color: rgb(43, 159, 226);
+        }
+        .calculadora{
+          display: flex;
+          flex-direction: column;
+          align-content: space-between;
+          margin-top:1cm;
+          margin-left: 35%;
+         margin-right: 35%;
+         padding:1cm;
+         background-color: gray;
+          
+         }
+         p{
+          text-align: center;
+          
+         }
+         #op1 {
+          margin: auto;
+          width: 4cm;
+                    
+         }
+         #op2{
+          margin: auto;
+          width: 4cm;
+         }
+         #res{
+          margin: auto;
+          width: 4cm;
+         }
+         button{
+          margin: auto;
+          color: black;
+         }
+         .operaciones{
+          margin: auto;
+          margin-bottom: .5cm;
+          display: flex;
+          gap: 23px;
+          align-content: center;
+          
+         }
+         #res{
+          display: flex;
+          align-content: center;
+          
+         }
+
+          </style>
        
 <div class="calculadora">
-        <input type="number" id="op1" />
+  <p><b>Introduce las cantidades y selecciona una operación</b></p>
+        <input type="number" id="op1" placeholder="Cantidad" />
+        <br>
+        <div class="operaciones">
         <button type="button" onclick="operacion='suma'">+</button>
         <button type="button" onclick="operacion='resta'">-</button>
         <button type="button" onclick="operacion='mult'">x</button>
-        <button type="button" onclick="operacion='div'">/</button>
-        <input type="number" id="op2" />
+        <button type="button" onclick="operacion='div'">/</button>        
+      </div>
+        <input type="number" id="op2" placeholder="Cantidad" />
+        <br>
         <button type="button" onclick="operar()">=</button>
-        <input type="number" id="res" readonly />
+        <br>
+        <input type="number" id="res" readonly placeholder="Resultado" />
     
       <script>
         var cont = 0;
