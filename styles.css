@@ -1,8 +1,12 @@
++{
+    margin:0;
+}
 body {
     display: flex;
     flex-direction: column;
     background-color: #f2f2f2;
     background-image: url(./numeros-ordenados-coloridos-que-caen-concepto-estudio-matematico-digitos-voladores-magnifico-banner-matematicas-regreso-escuela-sobre-fondo-blanco-numeros-que-caen.avif);
+    background-size:cover;
     font-family: "Courier New", monospace;
     display: flex;
     justify-content: space-evenly;
