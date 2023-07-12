@@ -1,4 +1,4 @@
-+{
+*{
     margin:0;
 }
 body {
@@ -34,9 +34,12 @@ body {
   
   .calculator-instructions {
     color: white;
+    margin: 15px;
+    text-align: center;
   }
   
   #display {
+    
     width: 92%;
     height: 60px;
     margin-bottom: 20px;
