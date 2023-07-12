@@ -1,169 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </head>
-     <style>
-      h1{ margin: auto;
-        text-align: center;
-                color: seashell;
-        border-color: blue;
-              }
-              hr{
-                border-color:black;
-                
-              }
-    </style>
-       <h1>Calculadora</h1> 
-        <hr>
-      
-      <body>
-        <style> 
-        body{
-          background-color: rgb(43, 159, 226);
-        }
-        .calculadora{
-          display: flex;
-          flex-direction: column;
-          align-content: space-between;
-          margin-top:1cm;
-          margin-left: 35%;
-         margin-right: 35%;
-         padding:1cm;
-         background-color: gray;
-         background-attachment:inherit;
-          
-         }
-         p{
-          text-align: center;
-          
-         }
-         #op1 {
-          margin: auto;
-          width: 4cm;
-          background-color: white;
-          border-color: blue;
-          
-                    
-         }
-         #op2{
-          margin: auto;
-          width: 4cm;
-          background-color: white;
-          border-color: blue;
-         }
-         #res{
-          margin: auto;
-          width: 4cm;
-          background-color: white;
-          border-color: blue;
-         }
-         button{
-          margin: auto;
-          color: black;
-          
-         }
-         .operaciones{
-          margin: auto;
-          margin-bottom: .5cm;
-          display: flex;
-          gap: 23px;
-          align-content: center;
-          
-         }
-         #res{
-          display: flex;
-          align-content: center;
-          
-         }
-
-          </style>
-       
-<div class="calculadora">
-  <p><b>Introduce las cantidades y selecciona una operación</b></p>
-        <input type="number" id="op1" placeholder="Cantidad" />
-        <br>
-        <div class="operaciones">
-        <button type="button" onclick="operacion='suma'">+</button>
-        <button type="button" onclick="operacion='resta'">-</button>
-        <button type="button" onclick="operacion='mult'">x</button>
-        <button type="button" onclick="operacion='div'">/</button>        
-      </div>
-        <input type="number" id="op2" placeholder="Cantidad" />
-        <br>
-        <button type="button" onclick="operar()">=</button>
-        <br>
-        <input type="number" id="res" readonly placeholder="Resultado" />
-    
-      <script>
-        var cont = 0;
-        var complemento = "<br>";
-        var obj1 = {
-          valor1: 1,
-          valor2: 2,
-          subvalor1: {
-            valor1: 1,
-            valor2: {
-              valor3: "texto",
-            },
-          },
-        };
-
-        function cambiarTexto(nuevotexto) {
-          document.getElementById("demo").innerHTML =
-            nuevotexto + cont + complemento;
-          cont++;
-          console.log(obj1);
-          console.log(obj1.valor1);
-          console.log(obj1.valor2);
-          console.log(obj1.subvalor1);
-          console.log(obj1.subvalor1.valor1);
-          console.log(obj1.subvalor1.valor2.valor3);
-          console.log(document.getElementById("demo").attributes);
-
-          var lista = document.getElementById("compras");
-          var valor = document.getElementById("textoLista").value;
-          lista.innerHTML += "<li>" + valor + " " + cont + "</li>";
-        }
-      </script>
-
-      <script>
-        var operacion = "suma";
-
-        function operar() {
-          var valor1 = Number(document.getElementById("op1").value);
-          var valor2 = Number(document.getElementById("op2").value);
-          var result;
-
-          switch (operacion) {
-            case "suma":
-              result = valor1 + valor2;
-              break;
-            case "resta":
-              result = valor1 - valor2;
-              break;
-            case "mult":
-              result = valor1 * valor2;
-              break;
-            case "div":
-              if (valor2 == 0) {
-                alert("No se puede dividir entre 0");
-                return;
-              } else {
-                result = valor1 / valor2;
-              }
-              break;
-          }
-          document.getElementById("res").value = result;
-        }
-        //https://www.w3schools.com/js/js_intro.asp
-      </script>
-      </div>
-    </html>
-  </body>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1 class="calculator-title">Calculadora</h1>
+  <div class="calculator">
+    <h2 class="calculator-instructions">Introduzca la cantidad y realice la operación</h2>
+    <input type="text" id="display" readonly>
+    <div class="calculator-buttons">
+      <button onclick="appendNumber(7)">7</button>
+      <button onclick="appendNumber(8)">8</button>
+      <button onclick="appendNumber(9)">9</button>
+      <button onclick="appendOperation('+')">+</button>
+      <button onclick="appendNumber(4)">4</button>
+      <button onclick="appendNumber(5)">5</button>
+      <button onclick="appendNumber(6)">6</button>
+      <button onclick="appendOperation('-')">-</button>
+      <button onclick="appendNumber(1)">1</button>
+      <button onclick="appendNumber(2)">2</button>
+      <button onclick="appendNumber(3)">3</button>
+      <button onclick="appendOperation('*')">*</button>
+      <button  class="c"onclick="clearDisplay()">C</button>
+      <button onclick="appendNumber(0)">0</button>
+      <button onclick="calculateResult()">=</button>
+      <button onclick="appendOperation('/')">/</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
 </html>
-
